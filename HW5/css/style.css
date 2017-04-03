@@ -1,0 +1,97 @@
+body{
+  margin: 0;
+  background-image: url(img/Background.jpg);
+}
+nav::after, img::after, footer::after, .address::after ,.mail::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+header{
+  margin: auto;
+  width: 1188px;
+}
+.title{
+  font: 40px;
+  float: left;
+}
+ul{
+  float: right;
+  display: block;
+  margin-top: 30px;
+}
+nav li{
+  text-decoration: none;
+  list-style: none;
+  color: RGB(0, 0, 0);
+  padding-left: 30px;
+  float: left;
+  font-size: 18px;
+}
+li:hover{
+  color: RGB(255, 179, 167);
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+.p1, .p2{
+  width: 1188px;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+}
+.p1{
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+.p2{
+  margin-bottom: 20px;
+}
+.img{
+  width: 1188px;
+  margin: auto;
+  box-sizing: border-box;
+}
+.figure2{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.p3{
+  line-height: 40px;
+  font-size: 22px;
+  width: 1188px;
+  margin: 20px auto;
+}
+img{
+  border-radius: 3px;
+}
+.footer{
+  width: 1188px;
+  margin: auto;
+}
+footer{
+  color: white;
+  height: 190px;
+  background-color: RGB(105, 50, 10);
+}
+footer .left{
+  float: left;
+}
+footer .right{
+  float: right;
+  margin-top: 59px;
+  margin-right: 15px;
+}
+.address p, .mail p{
+  margin-left: 10px;
+  float: right;
+}
+.address, .mail{
+  margin-top: 30px;
+}
+.mail p{
+  margin-right: 85px;
+}
+.right img:hover, .left img:hover{
+  transform: scale(1.3);
+}
