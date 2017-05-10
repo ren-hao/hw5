@@ -126,6 +126,7 @@ $(document).ready(function(){
       console.log("SignUp user is "+user.email);
       const dbUserid = dbUser.child(user.uid);
       dbUserid.push({email:user.email});
+      window.location.href = './update.html';
     });
   });
 
@@ -134,7 +135,7 @@ $(document).ready(function(){
     if(user) {
       console.log(user);
       const loginName = user.displayName || user.email;
-      const photo = user.photoURL || "https://firebasestorage.googleapis.com/v0/b/firewk11.appspot.com/o/images%2F%E4%B8%8B%E8%BC%89.jpg?alt=media&token=6b469ab4-2df3-4d53-9bee-44e68a7cce1b";
+      const photo = user.photoURL;
       //CREATE ELEMENTS MESSAGE & SANITIZE TEXT
       $signInfo.html(loginName+" is login...");
       $btnSignIn.attr('disabled', 'disabled');
@@ -143,18 +144,20 @@ $(document).ready(function(){
       $profileName.html(user.displayName);
       $profileEmail.html(user.email);
       firebase.database().ref('/user/' + user.uid).on('value', function(snapshot){
+        $profileName.html(snapshot.val().Name);
         $profileAge.html(snapshot.val().Age);
         $profileOccupation.html(snapshot.val().Occupation);
         $profileDescriptions.html(snapshot.val().Descriptions);
+        $img.attr("src", snapshot.val().photoURL);
       });
-      $img.attr("src", photo);
+
 
       dbChatRoom.limitToLast(100).on('child_added', function (snapshot) {
         //GET DATA
         var data = snapshot.val();
         var username = data.name || "anonymous";
         var message = data.text;
-        var photoURL = data.photoURL || "https://firebasestorage.googleapis.com/v0/b/firewk11.appspot.com/o/images%2F%E4%B8%8B%E8%BC%89.jpg?alt=media&token=6b469ab4-2df3-4d53-9bee-44e68a7cce1b";
+        var photoURL = data.photoURL;
         //CREATE ELEMENTS MESSAGE & SANITIZE TEXT
         var $messageElement = $("<li>");
         var $nameElement = $("<strong class='example-chat-username'></strong>");
@@ -169,7 +172,7 @@ $(document).ready(function(){
         $messageList.append($messageElement);
 
         //SCROLL TO BOTTOM OF MESSAGE LIST
-        $messageList[0].scrollTop = $messageList[0].scrollHeight;
+        //$messageList[0].scrollTop = $messageList[0].scrollHeight;
       });
 
     } else {
@@ -211,23 +214,22 @@ $(document).ready(function(){
     const $userAge = $('#age').val();
     const $userOccupation = $('#occupation').val();
     const $userDescriptions = $('#descriptions').val();
-    /*
-    $('#userName').val("");
-     ('#age').val("");
-    $('#occupation').val("");
-    $('#descriptions').val("");
-    */
+
     const promise = user.updateProfile({
-      displayName: $userName,
+      displayName: userName,
       photoURL: photoURL
     });
     const dbUserid = dbUser.child(user.uid);
     dbUserid.update({
+      Name: $userName,
       Age: $userAge,
       Occupation: $userOccupation,
       Descriptions: $userDescriptions,
+      photoURL: photoURL
     });
+
     firebase.database().ref('/user/' + user.uid).on('value', function(snapshot){
+      $profileName.html(snapshot.val().Name);
       $profileAge.html(snapshot.val().Age);
       $profileOccupation.html(snapshot.val().Occupation);
       $profileDescriptions.html(snapshot.val().Descriptions);
@@ -235,7 +237,7 @@ $(document).ready(function(){
     promise.then(function() {
       user = firebase.auth().currentUser;
       if (user) {
-        $profileName.html(user.displayName);
+        //$profileName.html(user.displayName);
         $profileEmail.html(user.email);
         $img.attr("src",user.photoURL);
         const loginName = user.displayName || user.email;
@@ -255,7 +257,9 @@ $messageField.keypress(function (e) {
     var message = $messageField.val();
     console.log(message);
     //SAVE DATA TO FIREBASE AND EMPTY FIELD
-    dbChatRoom.push({name:user.displayName, text:message, photoURL: user.photoURL});
+    firebase.database().ref('/user/' + user.uid).on('value', function(snapshot){
+        dbChatRoom.push({name:snapshot.val().Name,text:message, photoURL: snapshot.val().photoURL});
+    });
     $messageField.val('');
   }
 });
