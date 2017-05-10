@@ -126,6 +126,7 @@ $(document).ready(function(){
       console.log("SignUp user is "+user.email);
       const dbUserid = dbUser.child(user.uid);
       dbUserid.push({email:user.email});
+      window.location.href = './profile.html';
     });
   });
 
