@@ -1,0 +1,342 @@
+/*
+My Custom CSS
+*/
+
+body{
+  background-color: RGB(253, 230, 200);
+  margin: 0px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, Geneva, "Heiti TC", "Microsoft JhengHei", sans-serif;
+}
+/* -------------------------
+  Layout
+----------------------------*/
+
+/* -------------------------
+  Typography
+----------------------------*/
+
+
+/* -------------------------
+  Navbar
+----------------------------*/
+.navbar-header img{
+  width: 100px;
+  height: 80px;
+}
+.navbar-header img:hover{
+  transform: scale(1.1);
+}
+.navbar-nav{
+  margin-top: 15px;
+  font-size: 2rem;
+}
+.navbar .container{
+  padding-left: 0px;
+}
+
+/* -------------------------
+  Carousel
+----------------------------*/
+#myCarousel{
+  width: 100%;
+  margin: 0;
+}
+#myCarousel img{
+  width: 100%;
+  padding: 0;
+  border-radius: 5px;
+}
+
+
+/* -------------------------
+  container Row
+----------------------------*/
+.row{
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 5px 20px;
+  box-sizing: border-box;
+}
+.row img{
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+}
+.hotImg img{
+  margin-top: 7px;
+  border-radius: 5px;
+  width: 300px;
+  height: 250px;
+  margin-bottom: 8px;
+}
+.container .home img:hover{
+  opacity: 0.7;
+}
+.home .carousel img:hover{
+  opacity: 1;
+}
+.row h1{
+  border-bottom: 3px solid RGB(239, 237, 232);
+  padding-left: 20px;
+  padding-bottom: 25px;
+  margin-bottom: 20px;
+}
+.row h3{
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid RGB(239, 237, 232);
+}
+.row h4{
+  text-align:left;
+}
+.row .person{
+  color: RGB(188, 188, 188);
+}
+.hotIcon img{
+  width: 20px;
+  height: 20px;
+}
+.hotIcon{
+  margin-top: 50px;
+}
+.hot .col-lg-8 h3{
+  padding: 0px;
+  padding-bottom: 15px;
+  border-bottom: none;
+}
+.practices img{
+  margin-bottom: 50px;
+  width: 720px;
+  height: 540px;
+}
+.practices img:hover{
+  opacity: 1;
+}
+/* -------------------------
+  Ingredients
+----------------------------*/
+.part{
+  border: 2px solid RGB(216,240,216);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.main{
+  border-bottom: 2px solid RGB(216,240,216);
+  background-color: RGB(216,240,216);
+  box-sizing: border-box;
+}
+.part h4{
+  margin: 0px;
+  padding: 10px;
+}
+.star img{
+  width: 30px;
+  height: 30px;
+}
+/* -------------------------
+  STEP
+----------------------------*/
+.step1 img, .step img{
+  width: 220px;
+  height: 165px;
+}
+.step1 h1, .step h1{
+  margin: 0px;
+  margin-bottom: 15px;
+  padding: 0px;
+  border: none;
+}
+.step1{
+  margin-top: 50px;
+  border-top: 2px solid RGB(200, 200, 200);
+  border-bottom: 2px solid RGB(239, 237, 232);
+}
+.step{
+  margin-top: 20px;
+  border-bottom: 2px solid RGB(239, 237, 232);
+}
+/* -------------------------
+  SignUp
+----------------------------*/
+.signup{
+  width: 800px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 50px;
+  margin: 100px auto;
+}
+.form-group button{
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 0px;
+  width: 500px;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.or{
+  text-align: center;
+  color: gray;
+  padding: 5px;
+}
+.form-group-box{
+  width: 500px;
+  margin: 10px auto 10px 120px;
+}
+/* -------------------------
+  Footer
+----------------------------*/
+footer{
+  background-color: white;
+  text-align: center;
+}
+footer .container p{
+  margin-top: 8px;
+}
+footer .row{
+  border-style: none;
+}
+footer .row img{
+  margin-top: 10px;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+}
+footer .col-lg-3:hover{
+  transform: scale(1.1);
+}
+footer .copyright{
+  margin-top: 5px;
+  padding-top: 15px;
+  border-top: 2px solid RGB(239, 237, 232);
+}
+/* -------------------------
+  RWD
+----------------------------*/
+@media (min-width: 480px){
+  .navbar .container{
+      width: 65%;
+  }
+  .item h1{
+    font-size: 20px;
+  }
+  .item h4{
+    font-size: 15px;
+  }
+  .home .row img{
+    width: 320px;
+    height: 320px;
+  }
+  .home .row h3, .home .row h4{
+    text-align: center;
+  }
+  .hotImg img{
+    margin-top: 30px;
+    width: 210px;
+    height: 175px;
+  }
+}
+@media (min-width: 768px){
+  .navbar .container{
+      width: 90%;
+  }
+  .item h1{
+    font-size: 20px;
+  }
+  .item h4{
+    font-size: 15px;
+  }
+  .home .row img{
+    width: 320px;
+    height: 320px;
+  }
+  .home .row h3, .home .row h4{
+    text-align: center;
+  }
+  .hotImg img{
+    margin-top: 30px;
+    width: 210px;
+    height: 175px;
+  }
+  .practices img{
+    margin-bottom: 50px;
+    width: 676px;
+    height: 513px;
+  }
+}
+@media (min-width: 1200px){
+  .navbar .container{
+      width: 1170px;
+  }
+  .item h1{
+    font-size: 40px;
+  }
+  .item h4{
+    font-size: 30px;
+  }
+  .home .row img{
+    width: 250px;
+    height: 250px;
+  }
+  .home .row h3, .home .row h4{
+    text-align: left;
+  }
+  .hotImg img{
+    margin-top: 0px;
+    width: 300px;
+    height: 250px;
+  }
+  .practices img{
+    margin-bottom: 50px;
+    width: 720px;
+    height: 540px;
+  }
+}
+@media (min-width: 1300px){
+  .navbar .container{
+      width: 1170px;
+  }
+}
+/* -------------------------
+  Img Flip
+----------------------------*/
+.container-box{
+  perspective:1000;
+  transform-style:preserve-3d;
+}
+.container-box,.front,.back{
+  width:250px;height:250px;
+}
+.flip{
+  position:relative;
+  transition:0.6s;
+  transform-style:preserve-3d;
+}
+.front,.back{
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  backface-visibility:hidden;
+}
+.front{
+  z-index:2;
+}
+.back{
+  transform:rotateY(-180deg);
+}
+.container-box:hover .flip{
+  transform:rotateY(180deg);
+}
+.front img, .back img{
+  border-radius: 50%;
+  width: 250px;height: 250px;
+}
+.offset{
+  margin-top: 80px;
+  margin-left: 100px;
+}
+#aboutus{
+  padding-bottom: 80px;
+}
